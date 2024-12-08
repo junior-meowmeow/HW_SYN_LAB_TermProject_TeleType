@@ -1,0 +1,245 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1.1 (win64) Build 5094488 Fri Jun 14 08:59:21 MDT 2024
+| Date         : Sun Dec  8 18:09:57 2024
+| Host         : JMM-Laptop running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file circuit_control_sets_placed.rpt
+| Design       : circuit
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   167 |
+|    Minimum number of control sets                        |   167 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   589 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   167 |
+| >= 0 to < 4        |    57 |
+| >= 4 to < 6        |     8 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |    14 |
+| >= 10 to < 12      |     8 |
+| >= 12 to < 14      |     3 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    73 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              67 |           54 |
+| No           | No                    | Yes                    |             455 |          273 |
+| No           | Yes                   | No                     |              92 |           44 |
+| Yes          | No                    | No                     |              58 |           31 |
+| Yes          | No                    | Yes                    |             188 |           74 |
+| Yes          | Yes                   | No                     |             127 |           38 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------------------------------------------------+---------------------------------------------------------+---------------------------------------------------------+------------------+----------------+--------------+
+|                          Clock Signal                          |                      Enable Signal                      |                     Set/Reset Signal                    | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------------------------------------------------+---------------------------------------------------------+---------------------------------------------------------+------------------+----------------+--------------+
+|  sdc/cmd_execute_signal                                        |                                                         | debouncer_reset/reset_stable                            |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                 | debouncer_btnC/last_bit_in_i_1__2_n_0                   |                                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                 | debouncer_btnC/bit_out_i_1__2_n_0                       |                                                         |                1 |              1 |         1.00 |
+|  rx_controller/baudrate_clk_divider/clk_baudrate_reg_0         | rx_controller/receiver/data_out[3]                      | debouncer_reset/reset_stable                            |                1 |              1 |         1.00 |
+|  rx_controller/baudrate_clk_divider/clk_baudrate_reg_0         | rx_controller/receiver/data_out[0]                      | debouncer_reset/reset_stable                            |                1 |              1 |         1.00 |
+|  rx_controller/baudrate_clk_divider/clk_baudrate_reg_0         | rx_controller/receiver/data_out[7]                      | debouncer_reset/reset_stable                            |                1 |              1 |         1.00 |
+|  rx_controller/baudrate_clk_divider/clk_baudrate_reg_0         | rx_controller/receiver/data_out[2]                      | debouncer_reset/reset_stable                            |                1 |              1 |         1.00 |
+|  rx_controller/baudrate_clk_divider/clk_baudrate_reg_0         | rx_controller/receiver/data_out[4]                      | debouncer_reset/reset_stable                            |                1 |              1 |         1.00 |
+|  rx_controller/baudrate_clk_divider/clk_baudrate_reg_0         | rx_controller/receiver/data_out[1]                      | debouncer_reset/reset_stable                            |                1 |              1 |         1.00 |
+|  rx_controller/baudrate_clk_divider/clk_baudrate_reg_0         | rx_controller/receiver/data_out[5]                      | debouncer_reset/reset_stable                            |                1 |              1 |         1.00 |
+|  rx_controller/baudrate_clk_divider/clk_baudrate_reg_0         | rx_controller/receiver/data_out[6]                      | debouncer_reset/reset_stable                            |                1 |              1 |         1.00 |
+|  rx_controller/baudrate_clk_divider/clk_baudrate_reg_0         | debouncer_reset/pacharaphon_bit_delayed0                |                                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                 | debouncer_reset/clear                                   |                                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                 | debouncer_reset/bit_out_i_1__1_n_0                      |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[11].fDiv/clk_div_reg_0 |                                                         |                                                         |                1 |              1 |         1.00 |
+|  kb_controller/ps2/p_9_in                                      |                                                         |                                                         |                1 |              1 |         1.00 |
+|  last_bit_in_reg_i_2_n_0                                       | kb_controller/ps2/debouncer_clk/clear                   |                                                         |                1 |              1 |         1.00 |
+|  last_bit_in_reg_i_2_n_0                                       | kb_controller/ps2/debouncer_clk/bit_out_i_1_n_0         |                                                         |                1 |              1 |         1.00 |
+|  last_bit_in_reg_i_2_n_0                                       | kb_controller/ps2/debouncer_data/bit_out_i_1__0_n_0     |                                                         |                1 |              1 |         1.00 |
+|  last_bit_in_reg_i_2_n_0                                       | kb_controller/ps2/debouncer_data/last_bit_in_i_1__0_n_0 |                                                         |                1 |              1 |         1.00 |
+|  last_bit_in_reg_i_2_n_0                                       |                                                         | debouncer_reset/reset_stable                            |                1 |              1 |         1.00 |
+|  last_bit_in_reg_i_2_n_0                                       |                                                         | kb_controller/ps2/debouncer_data/last_bit_in_i_1__0_n_0 |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[1].fDiv/clk_div_reg_0                     |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[17].fDiv/clk_div_reg_0                    |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[13].fDiv/clk_div_reg_0                    |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[12].fDiv/clk_div_reg_0                    |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[16].fDiv/clk_div_reg_0                    |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[15].fDiv/clk_div_reg_0                    |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[11].fDiv/clk_div_reg_0                    |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[14].fDiv/clk_div_reg_0                    |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[7].fDiv/clk_div_reg_0                     |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[3].fDiv/clk_div_reg_0                     |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[9].fDiv/clk_div_reg_0                     |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[8].fDiv/clk_div_reg_0                     |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[4].fDiv/clk_div_reg_0                     |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[6].fDiv/clk_div_reg_0                     |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[5].fDiv/clk_div_reg_0                     |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[0].fDiv/clk_div_reg_0                     |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[2].fDiv/clk_div_reg_0                     |                                                         |                                                         |                1 |              1 |         1.00 |
+|  tdm_clk_div/genblk1[10].fDiv/clk_div_reg_0                    |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[8].fDiv/clk_div_reg_0  |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[9].fDiv/clk_div_reg_0  |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[5].fDiv/clk_div_reg_0  |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[6].fDiv/clk_div_reg_0  |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[3].fDiv/clk_div_reg_0  |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[4].fDiv/clk_div_reg_0  |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[2].fDiv/clk_div_reg_0  |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[7].fDiv/clk_div_reg_0  |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[1].fDiv/clk_div_reg_0  |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[16].fDiv/clk_div_reg_0 |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[12].fDiv/clk_div_reg_0 |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[15].fDiv/clk_div_reg_0 |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[13].fDiv/clk_div_reg_0 |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[14].fDiv/clk_div_reg_0 |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[17].fDiv/clk_div_reg_0 |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[0].fDiv/clk_div_reg_0  |                                                         |                                                         |                1 |              1 |         1.00 |
+|  sdc/rgb_controller/clk_cat_div/genblk1[10].fDiv/clk_div_reg_0 |                                                         |                                                         |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                 | tx_controller/running                                   | debouncer_reset/reset_stable                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                                                 | tx_sender/cd_count[15]_i_1_n_0                          |                                                         |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                                                 | rx_controller/tx_sender/tx_ready                        | debouncer_reset/reset_stable                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                                                 | rx_controller/tx_sender/cd_count[15]_i_1__0_n_0         |                                                         |                1 |              4 |         4.00 |
+| ~kb_controller/ps2/debouncer_clk/bit_out_reg_0                 | kb_controller/ps2/count                                 | debouncer_reset/reset_stable                            |                1 |              4 |         4.00 |
+|  last_bit_in_reg_i_2_n_0                                       | kb_controller/ps2/debouncer_data/count[3]_i_1__0_n_0    | kb_controller/ps2/debouncer_data/last_bit_in_i_1__0_n_0 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                                                 | sdc/line_to_flush0                                      | debouncer_reset/reset_stable                            |                4 |              5 |         1.25 |
+|  clk_IBUF_BUFG                                                 | sdc/char_count[4]_i_1_n_0                               | debouncer_reset/reset_stable                            |                2 |              5 |         2.50 |
+|  last_bit_in_reg_i_2_n_0                                       |                                                         |                                                         |                3 |              6 |         2.00 |
+|  sdc/rgb_controller/clk_cat_div/fdivTarget/clk_div_reg_0       |                                                         | debouncer_reset/reset_stable                            |                4 |              7 |         1.75 |
+|  clk_IBUF_BUFG                                                 | sdc/col_to_flush[6]_i_1_n_0                             | debouncer_reset/reset_stable                            |                5 |              7 |         1.40 |
+|  clk_IBUF_BUFG                                                 | debouncer_btnC/count                                    | debouncer_btnC/last_bit_in_i_1__2_n_0                   |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG                                                 | kb_controller/ps2/E[0]                                  | debouncer_reset/reset_stable                            |                3 |              8 |         2.67 |
+|  last_bit_in_reg_i_2_n_0                                       | kb_controller/ps2/data_prev_0                           |                                                         |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                                                 | sdc/first_8char[2][8]_i_2_n_0                           | sdc/first_8char[2][8]_i_1_n_0                           |                2 |              9 |         4.50 |
+|  clk_IBUF_BUFG                                                 | sdc/first_8char[5][8]_i_2_n_0                           | sdc/first_8char[5][8]_i_1_n_0                           |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG                                                 | sdc/first_8char[7][8]_i_2_n_0                           | sdc/first_8char[7][8]_i_1_n_0                           |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG                                                 | sdc/first_8char[3][8]_i_2_n_0                           | sdc/first_8char[3][8]_i_1_n_0                           |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG                                                 | sdc/first_8char[6][8]_i_2_n_0                           | sdc/first_8char[6][8]_i_1_n_0                           |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG                                                 | sdc/first_8char[0][8]_i_2_n_0                           | sdc/first_8char[0][8]_i_1_n_0                           |                2 |              9 |         4.50 |
+|  clk_IBUF_BUFG                                                 | sdc/first_8char[1][8]_i_2_n_0                           | sdc/first_8char[1][8]_i_1_n_0                           |                2 |              9 |         4.50 |
+|  clk_IBUF_BUFG                                                 | rx_controller/receiver/finish_receive_reg_0[0]          | debouncer_reset/reset_stable                            |                4 |              9 |         2.25 |
+|  clk_IBUF_BUFG                                                 | rx_controller/tx_sender/shift[8]_i_1__0_n_0             | debouncer_reset/reset_stable                            |                5 |              9 |         1.80 |
+|  clk_IBUF_BUFG                                                 | tx_sender/shift[8]_i_1_n_0                              | debouncer_reset/reset_stable                            |                3 |              9 |         3.00 |
+| ~kb_controller/ps2/debouncer_clk/bit_out_reg_0                 |                                                         | debouncer_reset/reset_stable                            |                4 |              9 |         2.25 |
+|  clk_IBUF_BUFG                                                 | sdc/first_8char[4][8]_i_2_n_0                           | sdc/first_8char[4][8]_i_1_n_0                           |                2 |              9 |         4.50 |
+|  sdc/cmd_execute_signal                                        | sdc/rgb_controller/hl_color                             | debouncer_reset/reset_stable                            |                3 |             10 |         3.33 |
+|  rx_controller/baudrate_clk_divider/clk_baudrate_reg_0         |                                                         | debouncer_reset/reset_stable                            |                3 |             10 |         3.33 |
+|  sdc/rgb_controller/clk_cat_div/fdivTarget/clk_div_reg_0       | sdc/rgb_controller/nyancat_start_x[9]_i_1_n_0           | debouncer_reset/reset_stable                            |                4 |             10 |         2.50 |
+|  rgb_tick_BUFG                                                 | vga/v_count_next                                        | debouncer_reset/reset_stable                            |                6 |             10 |         1.67 |
+|  rgb_tick_BUFG                                                 |                                                         | debouncer_reset/reset_stable                            |                7 |             10 |         1.43 |
+|  clk_IBUF_BUFG                                                 | tx_sender/E[0]                                          | debouncer_reset/reset_stable                            |                2 |             10 |         5.00 |
+|  clk_IBUF_BUFG                                                 |                                                         |                                                         |                8 |             11 |         1.38 |
+|  clk_IBUF_BUFG                                                 |                                                         | reset_IBUF                                              |                3 |             11 |         3.67 |
+|  clk_IBUF_BUFG                                                 | rgb_tick_BUFG                                           | vga/bit_out_reg                                         |                5 |             12 |         2.40 |
+|  clk_IBUF_BUFG                                                 | debouncer_reset/reset_stable                            |                                                         |                3 |             12 |         4.00 |
+|  tdm_clk_div/fdivTarget/CLK                                    |                                                         |                                                         |                6 |             13 |         2.17 |
+|  clk_IBUF_BUFG                                                 | debouncer_reset/pacharaphon_bit_delayed0                | tx_sender/cd_count[15]_i_1_n_0                          |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG                                                 | kb_controller/ps2/tx_con_start0                         | debouncer_reset/reset_stable                            |                4 |             16 |         4.00 |
+|  last_bit_in_reg_i_2_n_0                                       | kb_controller/ps2/keycode[15]_i_1_n_0                   | debouncer_reset/reset_stable                            |                2 |             16 |         8.00 |
+|  clk_IBUF_BUFG                                                 | rx_controller/receiver/E[0]                             | debouncer_reset/reset_stable                            |               10 |             16 |         1.60 |
+|  clk_IBUF_BUFG                                                 | debouncer_reset/pacharaphon_bit_delayed0                | rx_controller/tx_sender/cd_count[15]_i_1__0_n_0         |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG                                                 | debouncer_reset/pacharaphon_bit_delayed0                |                                                         |               16 |             21 |         1.31 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1152_1215_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1024_1087_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1088_1151_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1216_1279_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1472_1535_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_896_959_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | rx_controller/tx_sender/E[0]                            | debouncer_reset/reset_stable                            |                6 |             28 |         4.67 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_960_1023_0_2_i_1_n_0              |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_832_895_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_64_127_0_2_i_1_n_0                |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3584_3647_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_640_703_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_704_767_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_768_831_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3904_3967_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3968_4031_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_512_575_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_4032_4095_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_448_511_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_576_639_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3712_3775_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3648_3711_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3776_3839_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3840_3903_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_384_447_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3520_3583_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3328_3391_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3264_3327_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3456_3519_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3392_3455_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3136_3199_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2944_3007_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_320_383_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3008_3071_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3200_3263_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_3072_3135_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2816_2879_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2752_2815_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2688_2751_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_256_319_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2624_2687_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2880_2943_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2560_2623_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2304_2367_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2432_2495_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2496_2559_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2368_2431_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_192_255_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1984_2047_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2240_2303_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2112_2175_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2176_2239_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_2048_2111_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1920_1983_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1408_1471_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1600_1663_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1856_1919_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1792_1855_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1664_1727_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1280_1343_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1344_1407_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1536_1599_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_128_191_0_2_i_1_n_0               |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_0_63_0_2_i_4_n_0                  |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 | sdc/dp_ram/ram_reg_r1_1728_1791_0_2_i_1_n_0             |                                                         |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG                                                 |                                                         | rx_controller/baudrate_clk_divider/clear                |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG                                                 |                                                         | debouncer_reset/reset_stable                            |              285 |            465 |         1.63 |
++----------------------------------------------------------------+---------------------------------------------------------+---------------------------------------------------------+------------------+----------------+--------------+
+
+
